@@ -1,3 +1,7 @@
+## [0.2.2] - 2022-01-07
+
+- change moisture to humidity
+
 ## [0.1.9] - 2021-10-03
 
 - Use local copy of rtl_433 discovery script to incorporate changes not merged upstream
