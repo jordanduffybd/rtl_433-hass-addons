@@ -179,6 +179,7 @@ mappings = {
             "icon": "mdi:clock-in"
         }
     },
+
     "battery_ok": {
         "device_type": "sensor",
         "object_suffix": "B",
@@ -186,7 +187,18 @@ mappings = {
             "device_class": "battery",
             "name": "Battery",
             "unit_of_measurement": "%",
-            "value_template": "{{ float(value|int) * 100 }}"
+            "value_template": "{{ value|float * 100 }}"
+        }
+    },
+
+    "battery_mV": {
+        "device_type": "sensor",
+        "object_suffix": "BV",
+        "config": {
+            "device_class": "battery",
+            "name": "Battery mV",
+            "unit_of_measurement": "%",
+            "value_template": "{{ value|float }}"
         }
     },
 

@@ -1,3 +1,7 @@
+## [0.2.4] - 2022-01-07
+
+- update battery ok to value|float x 100
+
 ## [0.2.3] - 2022-01-07
 
 - update battery ok to %
