@@ -1,3 +1,7 @@
+## [0.2.3] - 2022-01-07
+
+- update battery ok to %
+
 ## [0.2.2] - 2022-01-07
 
 - change moisture to humidity
