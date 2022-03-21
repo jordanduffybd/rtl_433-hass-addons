@@ -1,6 +1,6 @@
 {
   "name": "rtl_433 MQTT Auto DiscoveryJ",
-  "version": "0.2.6",
+  "version": "0.2.4",
   "slug": "rtl433mqttautodiscovery",
   "description": "Automatic discovery of rtl_433 device information via MQTT",
   "url": "https://github.com/pbkhrv/rtl_433-hass-addons/tree/main/rtl_433_mqtt_autodiscovery",
@@ -16,8 +16,7 @@
     "rtl_topic": "rtl_433/+/events",
     "discovery_prefix": "homeassistant",
     "discovery_interval": 600,
-    "force_update": false,
-    "log_level": "default"
+    "force_update": false
   },
   "schema": {
     "mqtt_host": "str?",
@@ -28,8 +27,7 @@
     "rtl_topic": "str",
     "discovery_prefix": "str",
     "discovery_interval": "int",
-    "force_update": "bool",
-    "log_level": "list(default|quiet|debug)"
+    "force_update": "bool"
   },
   "services": ["mqtt:want"]
 }

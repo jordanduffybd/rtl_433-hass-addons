@@ -494,60 +494,6 @@ mappings = {
             "name": "Lightning Strike Count",
             "value_template": "{{ value|int }}"
         }
-    },
-    "channel": {
-        "device_type": "device_automation",
-        "object_suffix": "CH",
-        "config": {
-           "automation_type": "trigger",
-           "type": "button_short_release",
-           "subtype": "button_1",
-        }
-    },
-    "button": {
-        "device_type": "device_automation",
-        "object_suffix": "BTN",
-        "config": {
-           "automation_type": "trigger",
-           "type": "button_short_release",
-           "subtype": "button_1",
-        }
-    },
-    "code": {
-        "device_type": "device_automation",
-        "object_suffix": "CODE",
-        "config": {
-           "automation_type": "trigger",
-           "type": "button_short_release",
-           "subtype": "button_1",
-        }
-    },
-    "unit": {
-        "device_type": "device_automation",
-        "object_suffix": "unit",
-        "config": {
-           "automation_type": "trigger",
-           "type": "button_short_release",
-           "subtype": "button_1",
-        }
-    },
-    "tristate": {
-        "device_type": "device_automation",
-        "object_suffix": "tristate",
-        "config": {
-           "automation_type": "trigger",
-           "type": "button_short_release",
-           "subtype": "button_1",
-        }
-    },
-    "cmd": {
-        "device_type": "device_automation",
-        "object_suffix": "CMD",
-        "config": {
-           "automation_type": "trigger",
-           "type": "button_short_release",
-           "subtype": "button_1",
-        }
     }
 }
 
@@ -623,15 +569,10 @@ def publish_config(mqttc, topic, model, instance, mapping):
     discovery_timeouts[path] = now + args.discovery_interval
 
     config = mapping["config"].copy()
-    if device_type == 'device_automation':
-        config["topic"] = topic
-        config["platform"] = 'mqtt'
-        config["payload"] = value
-    else:
-        config["state_topic"] = topic
-        config["unique_id"] = object_name
-        config["name"] = object_name
-    config["device"] = { "identifiers": [object_id], "name": object_id, "model": model, "manufacturer": "rtl_433" }
+    config["name"] = object_name
+    config["state_topic"] = topic
+    config["unique_id"] = object_name
+    config["device"] = { "identifiers": object_id, "name": object_id, "model": model, "manufacturer": "rtl_433" }
 
     if args.force_update:
         config["force_update"] = "true"
